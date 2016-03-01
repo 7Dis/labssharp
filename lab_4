@@ -59,3 +59,33 @@
             time2 = getTimeInMilliseconds();
             Console.WriteLine(" f= {0}, " + "Время работы циклической процедуры: {1}", f, time2 - time1);
         }
+
+
+
+
+
+
+
+4 задание не пашет
+
+        static double lab4_4(int a, int n)
+        {
+            double c1;
+            c1 = 1;
+            c1 = 1 / a;
+            Console.WriteLine("c1="+ c1);
+            Console.WriteLine("a=" + a);
+            Console.WriteLine("n=" + n);
+            if (n == 1) { return 1/a; }
+            else return ((1/a)* lab4_4(a, --n));
+        }
+        static void Main(string[] args)
+        {
+            int a, n;
+            Console.Write("Введите a: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите n: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(lab4_4(a, n));
+            Console.ReadLine();
+        }
