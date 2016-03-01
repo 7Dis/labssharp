@@ -33,10 +33,9 @@
             d = Convert.ToDouble(Console.ReadLine());
             Console.Write("Введите число e: ");
             e = Convert.ToDouble(Console.ReadLine());
-            double x = (Math.Pow(2, (1 / n)) * (Math.Pow(12.3, 2) - Math.Pow(52.7 * Math.Pow(a, n) / Math.Pow(b, 2.5), 2)));
-            //Console.WriteLine("[DEBUG] " + x);
-            x /= (Math.Log(Math.Sqrt(132.5 + Math.Sin(Math.Pow(e, m)))) - e / Math.Pow(2, p));
-            //double x = (Math.Pow(2, (1 / n)) * (Math.Pow(12.3,2) - Math.Pow(52.7 * Math.Pow(a, n) / Math.Pow(b, 2.5),2)))/(Math.Log(Math.Pow((132.5+Math.Sin(Math.Pow(e,m))),1/3.0))-e/Math.Pow(2,p));
+            double C1 = 52.7 * Math.Pow(a,n)* Math.Pow(b,2.5);
+            double C2 = 1 / n, C3 = 12.3 - C1, C4 = Math.Log(Math.Sqrt(132.5+Math.Sin(Math.Pow(e,m))))-Math.Cos(Math.Pow(d,p)*c); ;
+            double x = Math.Pow(2, C2) * C3 * C3 / C4;
             Console.WriteLine("Получилось данное число: " + x);
         }
         static void lab2_4()
