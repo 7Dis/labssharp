@@ -1,0 +1,41 @@
+        static void lab2_1()
+        {
+            Console.Write("Введите число: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+            int pr1 = x * x;
+            int pr2 = pr1 * pr1;
+            x = pr2 * pr1;
+            Console.WriteLine("Данное число в шестой степени равно: " + x);
+        }
+        static void lab2_2()
+        {
+            Console.Write("Введите трехзначное число: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+            int sum = (x - x % 100) / 100 + (x % 100 - x % 10) / 10 + x % 10;
+            Console.WriteLine("Сумма чисел данного числа равна: " + sum);
+        }
+        static void lab2_3()
+        {
+            double m, n, p, a, b, c, d, e;
+            Console.Write("Введите число m: ");
+            m = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите число n: ");
+            n = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите число p: ");
+            p = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите число a: ");
+            a = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите число b: ");
+            b = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите число c: ");
+            c = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите число d: ");
+            d = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите число e: ");
+            e = Convert.ToDouble(Console.ReadLine());
+            double x = (Math.Pow(2, (1 / n)) * (Math.Pow(12.3, 2) - Math.Pow(52.7 * Math.Pow(a, n) / Math.Pow(b, 2.5), 2)));
+            //Console.WriteLine("[DEBUG] " + x);
+            x /= (Math.Log(Math.Sqrt(132.5 + Math.Sin(Math.Pow(e, m)))) - e / Math.Pow(2, p));
+            //double x = (Math.Pow(2, (1 / n)) * (Math.Pow(12.3,2) - Math.Pow(52.7 * Math.Pow(a, n) / Math.Pow(b, 2.5),2)))/(Math.Log(Math.Pow((132.5+Math.Sin(Math.Pow(e,m))),1/3.0))-e/Math.Pow(2,p));
+            Console.WriteLine("Получилось данное число: " + x);
+        }
