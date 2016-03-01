@@ -1,0 +1,61 @@
+ static void lab4_1()
+        {
+            Console.Write("Введите число n: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Factorials(n);
+        }
+        static void Factorials(int n)
+        {
+            int Fac = 1, i;
+            for (i = 1; i <= n; i++)
+            {
+                Fac *= i;
+                Console.WriteLine("Факториал числа {0} равен {1}", i, Fac);
+            }
+
+        }
+
+        static void lab4_2()
+        {
+            int i = 0, n = 1;
+            while (n != 0)
+            {
+                Console.Write("Введите число n: ");
+                n = Convert.ToInt32(Console.ReadLine());
+                if (n % 2 == 1) i++;
+                if (n == 0) break;
+            }
+            Console.WriteLine("Количество введенных нечетных чисел равно {0}", i);
+        }
+        static int NumberOfOdds(int n)
+        {
+            int kol = 0, i;
+            while (n != 0)
+            {
+                i = n % 10;
+                n = (n - n % 10) / 10;
+                if (i % 2 == 1) kol++;
+            }
+            return kol;
+        }
+
+        static long getTimeInMilliseconds()
+        {
+
+            DateTime time = DateTime.Now;
+            return (((time.Hour * 60 + time.Minute) * 60 + time.Second) * 1000 + time.Millisecond);
+
+        }
+
+        static void lab4_3()
+        {
+            int n;
+            Console.Write("Введите число n: ");
+            n =      Convert.ToInt32(Console.ReadLine());
+            long time1, time2;
+            long f = 0;
+            time1 = getTimeInMilliseconds();
+            for (int i = 1; i < 1000000; i++) f = NumberOfOdds(n);
+            time2 = getTimeInMilliseconds();
+            Console.WriteLine(" f= {0}, " + "Время работы циклической процедуры: {1}", f, time2 - time1);
+        }
