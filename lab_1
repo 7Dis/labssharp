@@ -39,3 +39,11 @@
             //double x = (Math.Pow(2, (1 / n)) * (Math.Pow(12.3,2) - Math.Pow(52.7 * Math.Pow(a, n) / Math.Pow(b, 2.5),2)))/(Math.Log(Math.Pow((132.5+Math.Sin(Math.Pow(e,m))),1/3.0))-e/Math.Pow(2,p));
             Console.WriteLine("Получилось данное число: " + x);
         }
+        static void lab2_4()
+        {
+            double km, arsh, lenght;
+            km = 56000000;
+            arsh = 1406.07;
+            lenght = km * arsh;
+            Console.WriteLine("Минимальное расстояние между Землей и Марсом равно {0}", lenght);
+        }
