@@ -1,0 +1,47 @@
+        static void lab3_1()
+        {
+            double x, a, b, c, F;
+            Console.Write("Введите число x: ");
+            x = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите число a: ");
+            a = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите число b: ");
+            b = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите число c: ");
+            c = Convert.ToDouble(Console.ReadLine());
+            if ((x < 0) & (b != 0)) { F = a - x / (10 + b); Console.WriteLine("Первая ветка "+F); }
+            else if ((x > 0) & (b == 0)) { F = (x - a) / (x - c); Console.WriteLine("Вторая ветка "+F); }
+            else { F = 3 * x + 2 / c; Console.WriteLine("Третья ветка  "+F); }
+
+        }
+        static void lab3_2()
+        {
+            int k, n, i = 0;
+            double sum = 0;
+            Console.Write("Введите число n: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            for (k = 1; k <= n; k++)
+            {
+                i++;
+                if (i < 4)
+                {
+                    sum += 1 / (k * (k + 1));
+                    Console.WriteLine("sum[{0}]= {1}", k, sum);
+                }
+                else { i = 0; }
+            }
+            Console.WriteLine("Сумма равна: " + sum);
+        }
+        static void lab3_3()
+        {
+            int n, i = 0;
+            double sum = 0, sum2 = 0;
+            Console.Write("Введите число n: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            for (i = 1; i <= n; i++)
+            {
+                sum2 += +i;
+                sum += +1 / sum2;
+            }
+            Console.WriteLine("Сумма равна: " + sum);
+        }
