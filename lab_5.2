@@ -1,0 +1,22 @@
+        int[] array = {
+            2,
+            3,
+            7,
+            9,
+            -35,
+            -455,
+            2344,
+            12,
+            898,
+            1565,
+            25
+        };
+        for (int i = 1; i < array.Length; i += 2) {
+            int a = array[i];
+            array[i] = array[i - 1];
+            array[i - 1] = a;
+        }
+        foreach(int element in array) {
+            Console.Write("{0} ", element);
+        }
+        Console.ReadKey();
