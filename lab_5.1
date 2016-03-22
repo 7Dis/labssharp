@@ -1,0 +1,54 @@
+        static int kolvo_neotr_chisel(int[] mas) {
+            int kolvo = 0;
+            foreach(int element_mas in mas) {
+                if (element_mas >= 0) kolvo++;
+            }
+            return kolvo;
+        }
+
+        static int sum_otr_chisel(int[] mas) {
+            int sum = 0;
+            foreach(int element_mas in mas) {
+                if (element_mas < 0) sum += element_mas;
+            }
+            return sum;
+        }
+
+        static int nomer_min_chisla(int[] mas) {
+            int i = 0, nomer = 1, min = mas[0];
+            foreach(int element_mas in mas) {
+                i++;
+                if (element_mas < min) {
+                    min = element_mas;
+                    nomer = i;
+                };
+
+            }
+            return nomer;
+        }
+
+        static void vivod_necet_elementov(int[] mas) {
+            int i = 0;
+            foreach(int element_mas in mas) {
+                ++i;
+                if (i % 2 == 1) Console.WriteLine("a[{0}]={1}", i, element_mas);
+            }
+        }
+
+        static void Main(string[] args) {
+                int[] mas = new int[15];
+                Random ran = new Random();
+                for (int i = 0; i < 15; i++)
+                    mas[i] = ran.Next(0, 200) - 100;
+                foreach(int element_mas in mas) {
+                    Console.WriteLine(element_mas);
+                };
+                Console.WriteLine();
+                Console.WriteLine(kolvo_neotr_chisel(mas));
+                Console.WriteLine();
+                Console.WriteLine(sum_otr_chisel(mas));
+                Console.WriteLine();
+                Console.WriteLine(nomer_min_chisla(mas));
+                Console.WriteLine();
+                vivod_necet_elementov(mas);
+                Console.ReadKey();
