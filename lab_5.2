@@ -1,0 +1,43 @@
+    static void Sort(int[] a, int[] b, int[] result) {
+        int pos = 0;
+        int pos_a = 0;
+        int pos_b = 0;
+        for (; pos_a < a.Length && pos_b < b.Length;) {
+            if (a[pos_a] == b[pos_b]) {
+                result[pos++] = a[pos_a++];
+                result[pos++] = b[pos_b++];
+            } else
+            if (a[pos_a] < b[pos_b]) {
+                result[pos++] = a[pos_a++];
+            } else
+                result[pos++] = b[pos_b++];
+        }
+        if (pos_a == a.Length)
+            for (; pos_b < b.Length;)
+                result[pos++] = b[pos_b++];
+        else
+            for (; pos_a < a.Length;)
+                result[pos++] = a[pos_a++];
+    }
+    static void Main(string[] args) {
+        int i = 0;
+        int[] a = {
+            1,
+            3,
+            6,
+            7
+        };
+        int[] b = {
+            2,
+            4,
+            8
+        };
+        int[] result = new int[a.Length + b.Length];
+        Sort(a, b, result);
+        foreach(int element in result) {
+            i++;
+            Console.WriteLine("C[{0}]={1}", i, element);
+
+        }
+        Console.ReadKey();
+    }
