@@ -1,0 +1,20 @@
+        static void Main(string[] args)
+        {
+            const string chars = "abcdefgh0123?!;";
+            var rnd = new Random();
+            var length = 15;
+            var sb = new StringBuilder(length) { Length =length };
+            for (int i = 0; i < sb.Length; i++)
+            {
+                var index = rnd.Next(chars.Length);
+                sb[i] = chars[index];
+            }
+            Console.WriteLine(sb.ToString());
+            for (int i = 0; i < sb.Length; i++)
+            {
+                if (sb[i] == '?')
+                    sb[i] = '_';
+            }
+            Console.WriteLine(sb.ToString());
+            Console.Read();
+        }
