@@ -1,0 +1,53 @@
+static void Main(string[] args)
+        {
+            int rows, columns;
+            Console.Write("Строк: ");
+            rows = int.Parse(Console.ReadLine());
+            Console.Write("Столбцов: ");
+            columns = int.Parse(Console.ReadLine());
+            int[,] matrix = new int[rows, columns];
+            Random random = new Random();
+            Console.WriteLine("Исходная матрица: ");
+            int[] sum = new int[columns];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    
+                    matrix[i, j] = random.Next(-10, 10);
+                    Console.Write("{0}\t", matrix[i, j]);
+                    if (matrix[i, j] < 0)
+                        sum[j] += Math.Abs(matrix[i, j]);
+
+                }
+                Console.WriteLine("");
+            }
+            for (int j = 0; j < columns; j++)
+            {
+                Console.Write("sum:{0}\t", sum[j]);
+
+            }
+            for (int i = 0; i < sum.Length - 1; i++)
+                for (int j = i + 1; j < sum.Length; j++)
+                    if (sum[i] > sum[j])
+                    {
+                        int b = sum[i];
+                        sum[i] = sum[j];
+                        sum[j] = b;
+                        for (int m = 0; m < rows; m++)
+                        {
+                            b = matrix[m, j];
+                            matrix[m, j] = matrix[m, i];
+                            matrix[m, i] = b;
+                        }
+                    }
+            Console.WriteLine();
+            Console.WriteLine("Новая матрица: ");
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                    Console.Write("{0, 5}", matrix[i, j]);
+                Console.WriteLine();
+            }
+            Console.ReadKey(true);
+        }
