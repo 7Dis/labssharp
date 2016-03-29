@@ -1,0 +1,19 @@
+        static void Main(string[] args)
+        {
+            string x = Console.ReadLine();
+            string y = Console.ReadLine();
+            int z = 0;
+            for (int i = 0; i <= x.Length - 1; i++)
+            {
+                if (z == x.Length) break;
+                for (int j = 0; j <= y.Length - 1; j++)
+                {
+                    if (x[i] == y[j])
+                        z = z + 1;
+                }
+            }
+            if (z > 0)
+                Console.WriteLine("yes");
+            else
+                Console.WriteLine("no");
+        }
